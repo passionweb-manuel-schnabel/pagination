@@ -1,0 +1,21 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default"/>
+
+<f:section name="content">
+
+    <f:asset.css identifier="paginationListCss" href="EXT:pagination/Resources/Public/Css/list.css" />
+
+    <div class="container">
+        <h1>Pagination example</h1>
+        <hr />
+        <ul>
+            <f:for each="{sampleData}" as="data" iteration="it">
+                <f:if condition="{it.index} >= {paginator.keyOfFirstPaginatedItem} && {it.index} <= {paginator.keyOfLastPaginatedItem}">
+                    <li>{data.title} - {data.bodytext}</li>
+                </f:if>
+            </f:for>
+        </ul>
+        <f:render partial="Pagination/Pagination" arguments="{pagination: pagination, paginator: paginator, action:'list'}" />
+    </div>
+</f:section>
+</html>

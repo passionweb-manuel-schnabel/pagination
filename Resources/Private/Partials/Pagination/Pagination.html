@@ -1,0 +1,27 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<nav class="pagination-wrap">
+    <ul class="pagination">
+        <f:if condition="{pagination.previousPageNumber} && {pagination.previousPageNumber} >= {pagination.firstPageNumber}">
+            <li class="pagination-previous">
+                <f:link.action action="{action}" arguments="{currentPage: pagination.previousPageNumber}" title="vorherige Seite">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512"><path d="M322.7 128.4l100.3 105c6 5.8 9 13.7 9 22.4s-3 16.5-9 22.4L322.7 383.6c-11.9 12.5-31.3 12.5-43.2 0-11.9-12.5-11.9-32.7 0-45.2l48.2-50.4h-217c-17 0-30.7-14.3-30.7-32s13.7-32 30.6-32h217l-48.2-50.4c-11.9-12.5-11.9-32.7 0-45.2 12-12.5 31.3-12.5 43.3 0z"/></svg>
+                </f:link.action>
+            </li>
+        </f:if>
+        <f:for each="{pagination.pages}" as="page">
+            <li class="{f:if(condition: '{page} == {paginator.currentPageNumber}', then:'current')}">
+                <f:link.action action="{action}" arguments="{currentPage: page}">{page}</f:link.action>
+            </li>
+        </f:for>
+        <f:if condition="{pagination.nextPageNumber} && {pagination.nextPageNumber} <= {pagination.lastPageNumber}">
+            <li class="pagination-next">
+                <f:link.action action="{action}" arguments="{currentPage: pagination.nextPageNumber}" title="nächste Seite">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512"><path d="M322.7 128.4l100.3 105c6 5.8 9 13.7 9 22.4s-3 16.5-9 22.4L322.7 383.6c-11.9 12.5-31.3 12.5-43.2 0-11.9-12.5-11.9-32.7 0-45.2l48.2-50.4h-217c-17 0-30.7-14.3-30.7-32s13.7-32 30.6-32h217l-48.2-50.4c-11.9-12.5-11.9-32.7 0-45.2 12-12.5 31.3-12.5 43.3 0z"/></svg>
+                </f:link.action>
+            </li>
+        </f:if>
+    </ul>
+</nav>
+
+</html>

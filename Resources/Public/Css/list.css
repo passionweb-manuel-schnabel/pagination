@@ -1,0 +1,22 @@
+.tx-pagination ul {
+    padding-left: 0;
+    list-style: none;
+}
+.tx-pagination ul li {
+    padding: 0.5rem 0;
+}
+.tx-pagination .pagination-wrap li a {
+    padding: 0 0.5rem;
+}
+.tx-pagination .pagination-wrap li a::after {
+    content: "" !important;
+}
+.tx-pagination .pagination-wrap li.pagination-previous svg {
+    width: 25px;
+    height: 25px;
+    transform: rotate(180deg);
+}
+.tx-pagination .pagination-wrap li.pagination-next svg {
+    width: 25px;
+    height: 25px;
+}
